@@ -132,8 +132,8 @@ function update() {
 		//the transition has finished!
 		if(newlevel < 0) {
 			// generating the new can
-			var newSpeed = (level * 22 * Math.random() + 100);
-			var newWidth = (130 * Math.pow(.9,level) + 50 * Math.random() + 30);
+			var newSpeed = (level * 20 * Math.random() + 100);
+			var newWidth = (130 * Math.pow(.91,level) + 50 * Math.random() + 30);
 			c[oldcan] = new can(100, newSpeed, newWidth);
 			newlevel = 0;
 		}
