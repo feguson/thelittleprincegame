@@ -185,7 +185,7 @@ function update() {
 }
 
 function render() {
-	ctx.clearRect(0, 0, 400, 800);
+	ctx.clearRect(0, 100, 400, 800);
 
 	//drawin the cans
 	ctx.fillStyle = "#fff";
