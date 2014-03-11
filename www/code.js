@@ -45,7 +45,6 @@ if(wW > wH) {
 	var ratio = wW/400;
 	ratio *= pR;
 }
-
 c.width = 400 * ratio;
 c.height = 700 * ratio;
 c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
@@ -195,7 +194,7 @@ function render() {
 	}
 
 	//drawing the prince
-	if(pR == 1) {
+	if(ratio < 1.4) {
 		if(prince.mov) {
 			ctx.drawImage(p1s,prince.posx-37,prince.posy-prince.jump-100,75,100)
 		} else {
