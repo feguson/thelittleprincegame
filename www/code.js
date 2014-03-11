@@ -42,7 +42,7 @@ if(wW > wH) {
 	}
 } else {
 	var ratio = wW/400;
-	ratio *= window.devicePixelRatio;
+	// ratio *= window.devicePixelRatio;
 }
 
 c.width = 400 * ratio;
