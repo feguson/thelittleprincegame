@@ -190,24 +190,30 @@ function render() {
 	//drawin the cans
 	ctx.fillStyle = "#fff";
 	for(x=0;x<4;x++) {
-		ctx.fillRect( (c[x].posx) | 0, (c[x].posy) | 0, c[x].len,12);
+		ctx.fillRect( (c[x].posx) | 0, c[x].posy, c[x].len,12);
 	}
 
 	//drawing the prince
-	if(ratio < 1.4) {
-		if(prince.mov) {
-			ctx.drawImage(p1s, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
-		} else {
-			ctx.drawImage(p0s, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
-		}
+	if(prince.mov) {
+		ctx.drawImage(prince1, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0, 75, 100)
 	} else {
-		if(prince.mov) {
-			ctx.drawImage(p1, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
-		} else {
-			ctx.drawImage(p0, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
-		}
+		ctx.drawImage(prince0, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0, 75, 100)
 	}
 }
+
+//pre-rendering prince
+
+var prince0 = document.createElement('canvas');
+prince0.width = (75 * ratio)|0;
+prince0.height = (100 * ratio)|0;
+var prince0tx = prince0.getContext('2d');
+prince0tx.drawImage(p0, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+
+var prince1 = document.createElement('canvas');
+prince1.width = (75 * ratio)|0;
+prince1.height = (100 * ratio)|0;
+var prince1tx = prince1.getContext('2d');
+prince1tx.drawImage(p1, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
 
 last = Date.now();
 setInterval(main, 1);
