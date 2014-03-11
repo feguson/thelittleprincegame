@@ -188,8 +188,8 @@ function render() {
 	ctx.clearRect(0, 0, 400, 800);
 
 	//drawin the cans
+	ctx.fillStyle = "#fff";
 	for(x=0;x<4;x++) {
-		ctx.fillStyle = "#fff";
 		ctx.fillRect(c[x].posx,c[x].posy,c[x].len,12);
 	}
 
