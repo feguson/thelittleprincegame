@@ -188,7 +188,7 @@ function render() {
 	ctx.clearRect(0, 100, 400, 700);
 
 	//drawin the cans
-	ctx.fillStyle = "#fff";
+	
 	for(x=0;x<4;x++) {
 		ctx.fillRect( (c[x].posx) | 0, c[x].posy, c[x].len,12);
 	}
@@ -203,17 +203,27 @@ function render() {
 
 //pre-rendering prince
 
+p0 = new Image();
+p0.src = "p0.png";
 var prince0 = document.createElement('canvas');
 prince0.width = (75 * ratio)|0;
 prince0.height = (100 * ratio)|0;
 var prince0tx = prince0.getContext('2d');
-prince0tx.drawImage(p0, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+p0.onload = function() {
+	prince0tx.drawImage(p0, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+};
 
+p1 = new Image();
+p1.src = "p1.png";
 var prince1 = document.createElement('canvas');
 prince1.width = (75 * ratio)|0;
 prince1.height = (100 * ratio)|0;
 var prince1tx = prince1.getContext('2d');
-prince1tx.drawImage(p1, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+p1.onload = function() {
+	prince1tx.drawImage(p1, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+};
+
+ctx.fillStyle = "#fff";
 
 last = Date.now();
 setInterval(main, 1);
