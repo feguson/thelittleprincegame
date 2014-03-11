@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>El Principito Saltarín</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+	<meta name="title" content="El Principito Saltarín" />
+	<meta property="og:title" content="El Principito Saltarín" />
+	<meta name="description" content="Pequeñísimo juego de plataformas donde tienes que hacer brincar al principito." />
+	<meta property="og:description"content="Pequeñísimo juego de plataformas donde tienes que hacer brincar al principito."/>
+	<link href="favicon.ico" rel="icon" type="image/x-icon" />
+	<meta property="og:image" content="http://javierbyte.com/app/principitosaltarin/nog.jpg" />
+
+	<style type="text/css">
+		*{margin:0;padding:0;font:1em/1.618 sans-serif;}
+		body{background:url(bg.png) repeat #16315c}
+		#main{max-width:100%;position: absolute;bottom: 0}
+		.screen{color:#fff;background:rgba(0,0,0,.5);position: absolute;top: 0;right: 0;padding:.5em;text-align: right;}
+		.hide{display: none;}
+	</style>
+</head>
+<body>
+
+	<canvas id="main" width="400" height="700"></canvas>
+
+	<img src="p0.png" id="p0" class="hide">
+	<img src="p1.png" id="p1" class="hide">
+
+	<div class="screen">
+	<div id="score">0</div>
+	max <span id="record">0</span>
+</div>
+
+<script type="text/javascript" src="fastclick.js"></script>
+<script type="text/javascript" src="code.js"></script>
+
+</body>
+</html>
