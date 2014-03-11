@@ -33,6 +33,7 @@ var ctx = c.getContext("2d");
 //resizing
 var wW = window.innerWidth;
 var wH = window.innerHeight;
+var pR = window.devicePixelRatio;
 
 if(wW > wH) {
 	if(wW/400 > wH/700) {
@@ -42,12 +43,12 @@ if(wW > wH) {
 	}
 } else {
 	var ratio = wW/400;
-	ratio *= window.devicePixelRatio;
+	ratio *= pR;
 }
 
 c.width = 400 * ratio;
 c.height = 700 * ratio;
-c.style.marginLeft = ((wW*window.devicePixelRatio-400*ratio)/2) + 'px';
+c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
 ctx.scale(ratio,ratio);
 
 //creating the cans
@@ -185,7 +186,7 @@ function update() {
 }
 
 function render() {
-	ctx.clearRect(0, 100, 400, 800);
+	ctx.clearRect(0, 100, 400, 700);
 
 	//drawin the cans
 	ctx.fillStyle = "#fff";
@@ -194,10 +195,18 @@ function render() {
 	}
 
 	//drawing the prince
-	if(prince.mov) {
-		ctx.drawImage(p1,prince.posx-37,prince.posy-prince.jump-100,75,100)
+	if(pR == 1) {
+		if(prince.mov) {
+			ctx.drawImage(p1s,prince.posx-37,prince.posy-prince.jump-100,75,100)
+		} else {
+			ctx.drawImage(p0s,prince.posx-37,prince.posy-prince.jump-100,75,100)
+		}
 	} else {
-		ctx.drawImage(p0,prince.posx-37,prince.posy-prince.jump-100,75,100)
+		if(prince.mov) {
+			ctx.drawImage(p1,prince.posx-37,prince.posy-prince.jump-100,75,100)
+		} else {
+			ctx.drawImage(p0,prince.posx-37,prince.posy-prince.jump-100,75,100)
+		}
 	}
 }
 
