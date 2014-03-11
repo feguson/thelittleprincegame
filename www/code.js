@@ -132,8 +132,8 @@ function update() {
 		//the transition has finished!
 		if(newlevel < 0) {
 			// generating the new can
-			var newSpeed = (level * 20 * Math.random() + 100);
-			var newWidth = (130 * Math.pow(.91,level) + 50 * Math.random() + 30);
+			var newSpeed = (level * 20 * Math.random() + 100) | 0;
+			var newWidth = (130 * Math.pow(.91,level) + 50 * Math.random() + 30) | 0;
 			c[oldcan] = new can(100, newSpeed, newWidth);
 			newlevel = 0;
 		}
@@ -190,21 +190,21 @@ function render() {
 	//drawin the cans
 	ctx.fillStyle = "#fff";
 	for(x=0;x<4;x++) {
-		ctx.fillRect(c[x].posx,c[x].posy,c[x].len,12);
+		ctx.fillRect( (c[x].posx) | 0, (c[x].posy) | 0, c[x].len,12);
 	}
 
 	//drawing the prince
 	if(ratio < 1.4) {
 		if(prince.mov) {
-			ctx.drawImage(p1s,prince.posx-37,prince.posy-prince.jump-100,75,100)
+			ctx.drawImage(p1s, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
 		} else {
-			ctx.drawImage(p0s,prince.posx-37,prince.posy-prince.jump-100,75,100)
+			ctx.drawImage(p0s, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
 		}
 	} else {
 		if(prince.mov) {
-			ctx.drawImage(p1,prince.posx-37,prince.posy-prince.jump-100,75,100)
+			ctx.drawImage(p1, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
 		} else {
-			ctx.drawImage(p0,prince.posx-37,prince.posy-prince.jump-100,75,100)
+			ctx.drawImage(p0, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0,75,100)
 		}
 	}
 }
