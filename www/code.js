@@ -63,7 +63,7 @@ c[1] = new can(250, 150, 130);
 c[2] = new can(400, 80, 140);
 c[3] = new can(550, 130, 150);
 
-var lowercan = c.length - 1; // the one in the bottom
+var lowercan = 4 - 1; // the one in the bottom
 var oldcan = 0;
 
 //inicializing the prince
@@ -98,7 +98,7 @@ function update() {
 	last = now;
 
 	//Magic. Do not touch.
-	for(x=0;x<c.length;x++) {
+	for(x=0;x<4;x++) {
 		//moving the can!
 		c[x].posx = (c[x].posx + c[x].speed * interval);
 
@@ -124,7 +124,7 @@ function update() {
 		newlevel -= interval*transitionSpeed;
 
 		// pushing down the things...
-		for(x=0;x<c.length;x++) {
+		for(x=0;x<4;x++) {
 			c[x].posy += interval*transitionSpeed * 150;
 		}
 		prince.posy += interval*transitionSpeed * 150;
@@ -169,8 +169,8 @@ function update() {
 				prince.on = x; //this is now moving with the can
 
 				lowercan -= 1;
-				if(lowercan == -1) lowercan = c.length - 1;
-				oldcan = (lowercan + c.length - 2) % c.length;
+				if(lowercan == -1) lowercan = 4 - 1;
+				oldcan = (lowercan + 4 - 2) % 4;
 
 				if(level>1) {
 					newlevel = 1;
@@ -188,7 +188,7 @@ function render() {
 	ctx.clearRect(0, 0, 400, 800);
 
 	//drawin the cans
-	for(x=0;x<c.length;x++) {
+	for(x=0;x<4;x++) {
 		ctx.fillStyle = "#fff";
 		ctx.fillRect(c[x].posx,c[x].posy,c[x].len,12);
 	}
