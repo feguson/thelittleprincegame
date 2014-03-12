@@ -1,3 +1,6 @@
+document.addEventListener("deviceready", onDeviceReady, true);
+function onDeviceReady(){
+
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
 document.addEventListener('keydown', function() {action();}, false);
@@ -203,7 +206,7 @@ function render() {
 }
 
 //loading audio
-var media = new Media('drop.mp3');
+var media = new Media('/android_asset/www/drop.mp3');
 
 //pre-rendering prince
 
@@ -231,3 +234,5 @@ ctx.fillStyle = "#fff";
 
 last = Date.now();
 setInterval(main, 1);
+
+} //closing onDeviceReady
