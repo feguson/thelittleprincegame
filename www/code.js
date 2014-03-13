@@ -89,7 +89,7 @@ function main() {
 
 function action() {
 	if(prince.mov == 0 && newlevel == 0) {
-		media.play();
+		dropsound.play();
 		prince.mov = 1; // start jumping!
 		prince.acc = 1; // initializing the acceleration
 		prince.on = -1; // stop following the can!
@@ -199,14 +199,14 @@ function render() {
 
 	//drawing the prince
 	if(prince.mov) {
-		ctx.drawImage(prince1, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0, (75*ratio)|0, (100*ratio)|0);
+		ctx.drawImage(prince1, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0;
 	} else {
-		ctx.drawImage(prince0, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0, (75*ratio)|0, (100*ratio)|0);
+		ctx.drawImage(prince0, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0;
 	}
 }
 
 //loading audio
-var media = new Media('/android_asset/www/drop.mp3');
+var dropsound = new Media('/android_asset/www/drop.mp3');
 
 //pre-rendering prince
 
