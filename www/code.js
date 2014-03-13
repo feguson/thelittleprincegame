@@ -1,7 +1,8 @@
+window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
+
 document.addEventListener("deviceready", onDeviceReady, true);
 function onDeviceReady(){
 
-window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
 document.addEventListener('keydown', function() {action();}, false);
 
@@ -193,6 +194,8 @@ function render() {
 	} else {
 		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	}
+
+	ctx.clearRect( 0, 0 , ratio400 , ratio600 );
 }
 
 //pre-loading variables
@@ -223,7 +226,7 @@ p1.onload = function() {
 };
 
 ctx.fillStyle = "#fff";
-ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (600*ratio)|0 );
+ctx.clearRect( 0, 0 , ratio400 , ratio600 );
 
 last = Date.now();
 setInterval(main, 1);
