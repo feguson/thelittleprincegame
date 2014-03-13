@@ -207,7 +207,7 @@ function render() {
 
 //pre-rendering prince
 
-var dropsound = new Media('/android_asset/www/drop.mp3')
+var dropsound = new Media('drop.mp3');
 
 p0 = new Image();
 p0.src = "p0.png";
