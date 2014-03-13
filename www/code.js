@@ -51,6 +51,7 @@ if(wW > wH) {
 c.width = 400 * ratio;
 c.height = 700 * ratio;
 c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
+ctx.scale(ratio,ratio);
 
 //creating the cans
 var c = [];
