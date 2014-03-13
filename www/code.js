@@ -89,6 +89,7 @@ function main() {
 
 function action() {
 	if(prince.mov == 0 && newlevel == 0) {
+		dropsound.play();
 		prince.mov = 1; // start jumping!
 		prince.acc = 1; // initializing the acceleration
 		prince.on = -1; // stop following the can!
@@ -205,6 +206,8 @@ function render() {
 }
 
 //pre-rendering prince
+
+var dropsound = new Media('/android_asset/www/drop.mp3')
 
 p0 = new Image();
 p0.src = "p0.png";
