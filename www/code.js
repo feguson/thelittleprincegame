@@ -1,5 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, true);
-function onDeviceReady(){
+/*document.addEventListener("deviceready", onDeviceReady, true);
+function onDeviceReady(){*/
 
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
@@ -189,24 +189,24 @@ function update() {
 }
 
 function render() {
-	ctx.clearRect(0, (100*ratio)|0 , (400*ratio)|0, (700*ratio)|0);
+	ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (700*ratio)|0 );
 
 	//drawin the cans
 	
 	for(x=0;x<4;x++) {
-		ctx.fillRect( (c[x].posx * ratio) | 0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, (12*ratio)|0);
+		ctx.fillRect( (c[x].posx*ratio)|0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, (12*ratio)|0 );
 	}
 
 	//drawing the prince
 	if(prince.mov) {
-		ctx.drawImage(prince1, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0);
+		ctx.drawImage(prince1, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	} else {
-		ctx.drawImage(prince0, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0);
+		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	}
 }
 
 //loading audio
-var dropsound = new Media('/android_asset/www/drop.mp3');
+var dropsound = new Audio('drop.mp3');
 
 //pre-rendering prince
 
@@ -231,8 +231,9 @@ p1.onload = function() {
 };
 
 ctx.fillStyle = "#fff";
+ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (700*ratio)|0 );
 
 last = Date.now();
 setInterval(main, 1);
 
-} //closing onDeviceReady
+//} //closing onDeviceReady
