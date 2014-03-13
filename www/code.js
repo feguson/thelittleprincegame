@@ -189,12 +189,12 @@ function update() {
 }
 
 function render() {
-	ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (700*ratio)|0 );
+	ctx.clearRect( 0, ratio100 , ratio400 , ratio700 );
 
 	//drawin the cans
 	
 	for(x=0;x<4;x++) {
-		ctx.fillRect( (c[x].posx*ratio)|0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, (12*ratio)|0 );
+		ctx.fillRect( (c[x].posx*ratio)|0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, ratio12 );
 	}
 
 	//drawing the prince
@@ -204,6 +204,12 @@ function render() {
 		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	}
 }
+
+//pre-loading variables
+var ratio100 = (100*ratio)|0;
+var ratio400 = (400*ratio)|0;
+var ratio700 = (700*ratio)|0;
+var ratio12 = (12*ratio)|0;
 
 //pre-rendering prince
 
