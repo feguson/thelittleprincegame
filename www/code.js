@@ -89,6 +89,7 @@ function main() {
 
 function action() {
 	if(prince.mov == 0 && newlevel == 0) {
+		dropsound.play();
 		prince.mov = 1; // start jumping!
 		prince.acc = 1; // initializing the acceleration
 		prince.on = -1; // stop following the can!
@@ -203,6 +204,8 @@ function render() {
 		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	}
 }
+
+var dropsound = new Media('dropsound.mp3');
 
 //pre-rendering prince
 
