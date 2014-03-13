@@ -205,7 +205,7 @@ function render() {
 	}
 }
 
-var dropsound = new Media('dropsound.mp3');
+var dropsound = new Media('/android_asset/www/audio/dropsound.mp3');
 
 //pre-rendering prince
 
