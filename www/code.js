@@ -206,7 +206,7 @@ function render() {
 }
 
 //loading audio
-var dropsound = new Audio('drop.mp3');
+var dropsound = new Media('drop.mp3');
 
 //pre-rendering prince
 
