@@ -46,7 +46,6 @@ if(wW > wH) {
 	}
 } else {
 	var ratio = wW/400;
-	ratio *= pR;
 }
 c.width = 400 * ratio;
 c.height = 700 * ratio;
