@@ -1,5 +1,5 @@
-/*document.addEventListener("deviceready", onDeviceReady, true);
-function onDeviceReady(){*/
+document.addEventListener("deviceready", onDeviceReady, true);
+function onDeviceReady(){
 
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
@@ -89,7 +89,6 @@ function main() {
 
 function action() {
 	if(prince.mov == 0 && newlevel == 0) {
-		dropsound.play();
 		prince.mov = 1; // start jumping!
 		prince.acc = 1; // initializing the acceleration
 		prince.on = -1; // stop following the can!
@@ -205,9 +204,6 @@ function render() {
 	}
 }
 
-//loading audio
-var dropsound = new Media('drop.mp3');
-
 //pre-rendering prince
 
 p0 = new Image();
@@ -236,4 +232,4 @@ ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (700*ratio)|0 );
 last = Date.now();
 setInterval(main, 1);
 
-//} //closing onDeviceReady
+} //closing onDeviceReady
