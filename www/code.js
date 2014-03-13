@@ -46,9 +46,12 @@ if(wW > wH) {
 	}
 } else {
 	var ratio = wW/400;
+	ratio *= pR;
 }
 c.width = (400 * ratio) | 0;
 c.height = (600 * ratio) | 0;
+c.style.width = ( 400 * ratio / pR) | 0;
+c.style.height = ( 600 * ratio / pR) | 0;
 //c.style.marginLeft = ((wW-400*ratio)/2)|0 + 'px';
 //ctx.scale(ratio,ratio);
 
