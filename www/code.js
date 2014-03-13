@@ -1,5 +1,5 @@
-/*document.addEventListener("deviceready", onDeviceReady, true);
-function onDeviceReady(){*/
+document.addEventListener("deviceready", onDeviceReady, true);
+function onDeviceReady(){
 
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
@@ -228,4 +228,4 @@ ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (600*ratio)|0 );
 last = Date.now();
 setInterval(main, 1);
 
-//} //closing onDeviceReady
+} //closing onDeviceReady
