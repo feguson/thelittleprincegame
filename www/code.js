@@ -1,5 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, true);
-function onDeviceReady(){
+//document.addEventListener("deviceready", onDeviceReady, true);
+//function onDeviceReady(){
 
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
@@ -194,7 +194,7 @@ function render() {
 	//drawin the cans
 	
 	for(x=0;x<4;x++) {
-		ctx.fillRect( (c[x].posx * ratio) | 0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, (12*ratio)|0;
+		ctx.fillRect( (c[x].posx * ratio) | 0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, (12*ratio)|0);
 	}
 
 	//drawing the prince
@@ -235,4 +235,4 @@ ctx.fillStyle = "#fff";
 last = Date.now();
 setInterval(main, 1);
 
-} //closing onDeviceReady
+//} //closing onDeviceReady
