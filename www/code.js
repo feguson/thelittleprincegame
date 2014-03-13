@@ -1,5 +1,5 @@
-document.addEventListener("deviceready", onDeviceReady, true);
-function onDeviceReady(){
+/*document.addEventListener("deviceready", onDeviceReady, true);
+function onDeviceReady(){*/
 
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
@@ -48,8 +48,8 @@ if(wW > wH) {
 	var ratio = wW/400;
 }
 c.width = (400 * ratio) | 0;
-c.height = (700 * ratio) | 0;
-c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
+c.height = (600 * ratio) | 0;
+//c.style.marginLeft = ((wW-400*ratio)/2)|0 + 'px';
 //ctx.scale(ratio,ratio);
 
 //creating the cans
@@ -60,10 +60,10 @@ function can(posy, speed, len) {
 	this.len = len;
 	this.posx = (400 - len) * Math.random();
 } 
-c[0] = new can(100, 70, 120);
-c[1] = new can(250, 150, 130);
-c[2] = new can(400, 80, 140);
-c[3] = new can(550, 130, 150);
+c[0] = new can(0, 70, 120);
+c[1] = new can(150, 150, 130);
+c[2] = new can(300, 80, 140);
+c[3] = new can(450, 130, 150);
 
 var lowercan = 4 - 1; // the one in the bottom
 var oldcan = 0;
@@ -71,7 +71,7 @@ var oldcan = 0;
 //inicializing the prince
 var prince = {
 	posx : 200,
-	posy : 700,
+	posy : 600,
 	acc : 0, // acceleration
 	mov : 0, // is this moving?
 	jump : 0, // the height of the jump, used later...
@@ -88,7 +88,6 @@ function main() {
 
 function action() {
 	if(prince.mov == 0 && newlevel == 0) {
-		dropsound.play();
 		prince.mov = 1; // start jumping!
 		prince.acc = 1; // initializing the acceleration
 		prince.on = -1; // stop following the can!
@@ -137,7 +136,7 @@ function update() {
 			// generating the new can
 			var newSpeed = (level * 20 * Math.random() + 100) | 0;
 			var newWidth = (130 * Math.pow(.91,level) + 50 * Math.random() + 30) | 0;
-			c[oldcan] = new can(100, newSpeed, newWidth);
+			c[oldcan] = new can(0, newSpeed, newWidth);
 			newlevel = 0;
 		}
 	}
@@ -180,7 +179,7 @@ function update() {
 				}
 			}
 		}
-		if(prince.posy - prince.jump > 800 && prince.fall == 1) {
+		if(prince.posy - prince.jump > 700 && prince.fall == 1) {
 			prince.mov = 0; prince.acc = 0;
 			location.reload();
 		}
@@ -188,7 +187,7 @@ function update() {
 }
 
 function render() {
-	ctx.clearRect( 0, ratio100 , ratio400 , ratio700 );
+	ctx.clearRect( 0, 0 , ratio400 , ratio600 );
 
 	//drawin the cans
 	
@@ -205,14 +204,11 @@ function render() {
 }
 
 //pre-loading variables
-var ratio100 = (100*ratio)|0;
 var ratio400 = (400*ratio)|0;
-var ratio700 = (700*ratio)|0;
+var ratio600 = (600*ratio)|0;
 var ratio12 = (12*ratio)|0;
 
 //pre-rendering prince
-
-var dropsound = new Media('drop.mp3');
 
 p0 = new Image();
 p0.src = "p0.png";
@@ -235,9 +231,9 @@ p1.onload = function() {
 };
 
 ctx.fillStyle = "#fff";
-ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (700*ratio)|0 );
+ctx.clearRect( 0, (100*ratio)|0 , (400*ratio)|0 , (600*ratio)|0 );
 
 last = Date.now();
 setInterval(main, 1);
 
-} //closing onDeviceReady
+//} //closing onDeviceReady
