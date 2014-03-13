@@ -11,15 +11,7 @@ var newlevel = 0;
 var record = 0;
 var timesplayed = 0;
 
-//counting the played times
-if(parseInt(localStorage["totalplays"],10) > 0) {
-	timesplayed = parseInt(localStorage["totalplays"],10) + 1;
-	localStorage["totalplays"] = timesplayed;
-} else {
-	localStorage["totalplays"] = 1;
-	timesplayed = 1;
-}
-
+/*
 //is this a new record?
 if(localStorage["maxrecord"] > 0) {
 	record = localStorage["maxrecord"];
@@ -27,6 +19,7 @@ if(localStorage["maxrecord"] > 0) {
 } else {
 	localStorage["maxrecord"] = 0;
 }
+*/
 
 //initializing the canvas
 var c = document.getElementById("main");
@@ -80,8 +73,6 @@ var prince = {
 	fall : 0, // has this passed the can height?
 	on : -1, // is this on a can? wich one?
 }
-var p0 = document.getElementById("p0");
-var p1 = document.getElementById("p1");
 
 function main() {
 	update();
@@ -161,10 +152,10 @@ function update() {
 				if (level > record) {
 					record = level;
 					localStorage["maxrecord"] = record;
-					document.getElementById("record").innerHTML = record;
+					//document.getElementById("record").innerHTML = record;
 				}
 
-				document.getElementById('score').innerHTML = level;
+				//document.getElementById('score').innerHTML = level;
 				prince.mov = 0; //stoping the prince move
 				prince.acc = 0;
 				prince.fall = 0;
