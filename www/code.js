@@ -194,8 +194,6 @@ function render() {
 	} else {
 		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	}
-
-	ctx.clearRect( 0, 0 , ratio400 , ratio600 );
 }
 
 //pre-loading variables
