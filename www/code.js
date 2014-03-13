@@ -51,7 +51,7 @@ if(wW > wH) {
 c.width = 400 * ratio;
 c.height = 700 * ratio;
 c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
-ctx.scale(ratio,ratio);
+//ctx.scale(ratio,ratio);
 
 //creating the cans
 var c = [];
@@ -189,19 +189,19 @@ function update() {
 }
 
 function render() {
-	ctx.clearRect(0, 100, 400, 700);
+	ctx.clearRect(0, (100*ratio)|0 , (400*ratio)|0, (700*ratio)|0);
 
 	//drawin the cans
 	
 	for(x=0;x<4;x++) {
-		ctx.fillRect( (c[x].posx) | 0, c[x].posy, c[x].len,12);
+		ctx.fillRect( (c[x].posx * ratio) | 0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, (12*ratio)|0;
 	}
 
 	//drawing the prince
 	if(prince.mov) {
-		ctx.drawImage(prince1, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0, 75, 100)
+		ctx.drawImage(prince1, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0, (75*ratio)|0, (100*ratio)|0);
 	} else {
-		ctx.drawImage(prince0, (prince.posx-37) | 0, (prince.posy-prince.jump-100) | 0, 75, 100)
+		ctx.drawImage(prince0, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0, (75*ratio)|0, (100*ratio)|0);
 	}
 }
 
