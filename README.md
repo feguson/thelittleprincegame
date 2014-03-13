@@ -2,6 +2,8 @@
 
 Minigame about the little Prince jumping.
 
+A blog post about it: http://javierbyte.com/el-principito-saltarin/
+
 ## Credits
 Built with Phonegap.
 

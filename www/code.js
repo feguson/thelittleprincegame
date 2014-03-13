@@ -11,7 +11,6 @@ var newlevel = 0;
 var record = 0;
 var timesplayed = 0;
 
-/*
 //is this a new record?
 if(localStorage["maxrecord"] > 0) {
 	record = localStorage["maxrecord"];
@@ -19,7 +18,6 @@ if(localStorage["maxrecord"] > 0) {
 } else {
 	localStorage["maxrecord"] = 0;
 }
-*/
 
 //initializing the canvas
 var c = document.getElementById("main");
@@ -32,11 +30,12 @@ var wH = window.innerHeight;
 var pR = window.devicePixelRatio;
 
 if(wW > wH) {
-	if(wW/400 > wH/700) {
-		var ratio = wH/700;
+	if(wW/400 > wH/650) {
+		var ratio = wH/650;
 	} else {
 		var ratio = wW/400;
 	}
+	c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
 } else {
 	var ratio = wW/400;
 	ratio *= pR;
@@ -152,10 +151,10 @@ function update() {
 				if (level > record) {
 					record = level;
 					localStorage["maxrecord"] = record;
-					//document.getElementById("record").innerHTML = record;
+					document.getElementById("record").innerHTML = record;
 				}
 
-				//document.getElementById('score').innerHTML = level;
+				document.getElementById('score').innerHTML = level;
 				prince.mov = 0; //stoping the prince move
 				prince.acc = 0;
 				prince.fall = 0;
