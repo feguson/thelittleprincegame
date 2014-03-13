@@ -199,9 +199,9 @@ function render() {
 
 	//drawing the prince
 	if(prince.mov) {
-		ctx.drawImage(prince1, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0;
+		ctx.drawImage(prince1, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0);
 	} else {
-		ctx.drawImage(prince0, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0;
+		ctx.drawImage(prince0, ((prince.posx-37)*ratio) | 0, ((prince.posy-prince.jump-100)*ratio) | 0);
 	}
 }
 
