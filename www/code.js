@@ -47,8 +47,8 @@ if(wW > wH) {
 } else {
 	var ratio = wW/400;
 }
-c.width = 400 * ratio;
-c.height = 700 * ratio;
+c.width = (400 * ratio) | 0;
+c.height = (700 * ratio) | 0;
 c.style.marginLeft = ((wW*pR-400*ratio)/2) + 'px';
 //ctx.scale(ratio,ratio);
 
