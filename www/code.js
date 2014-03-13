@@ -1,5 +1,5 @@
-//document.addEventListener("deviceready", onDeviceReady, true);
-//function onDeviceReady(){
+document.addEventListener("deviceready", onDeviceReady, true);
+function onDeviceReady(){
 
 window.addEventListener('load', function() {FastClick.attach(document.body);}, false);
 document.addEventListener('click', function() {action();}, false);
@@ -89,7 +89,7 @@ function main() {
 
 function action() {
 	if(prince.mov == 0 && newlevel == 0) {
-		//media.play();
+		media.play();
 		prince.mov = 1; // start jumping!
 		prince.acc = 1; // initializing the acceleration
 		prince.on = -1; // stop following the can!
@@ -206,7 +206,7 @@ function render() {
 }
 
 //loading audio
-//var media = new Media('/android_asset/www/drop.mp3');
+var media = new Media('/android_asset/www/drop.mp3');
 
 //pre-rendering prince
 
@@ -235,4 +235,4 @@ ctx.fillStyle = "#fff";
 last = Date.now();
 setInterval(main, 1);
 
-//} //closing onDeviceReady
+} //closing onDeviceReady
