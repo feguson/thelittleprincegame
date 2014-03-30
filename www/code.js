@@ -182,7 +182,7 @@ function render() {
 	//drawin the cans
 	
 	for(x=0;x<4;x++) {
-		ctx.fillRect( (c[x].posx*ratio)|0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, ratio12 );
+		//ctx.fillRect( (c[x].posx*ratio)|0, (c[x].posy*ratio)|0, (c[x].len*ratio)|0, ratio12 );
 	}
 
 	//drawing the prince
@@ -202,13 +202,13 @@ var ratio12 = (12*ratio)|0;
 
 //pre-rendering prince
 
-p0 = FastCanvas.createImage();
+var p0 = FastCanvas.createImage();
 p0.src = "p0.png";
 
-p1 = FastCanvas.createImage();
+var p1 = FastCanvas.createImage();
 p1.src = "p1.png";
 
-ctx.fillStyle = "#fff";
+//ctx.fillStyle = "#fff";
 ctx.clearRect( 0, 0 , ratio400 , ratio600 );
 FastCanvas.render();
 
