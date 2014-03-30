@@ -204,7 +204,7 @@ var ratio12 = (12*ratio)|0;
 
 p0 = FastCanvas.createImage();
 p0.src = "p0.png";
-var prince0 = document.createElement('canvas');
+var prince0 = FastCanvas.create();
 prince0.width = (75 * ratio)|0;
 prince0.height = (100 * ratio)|0;
 var prince0tx = prince0.getContext('2d');
@@ -214,7 +214,7 @@ p0.onload = function() {
 
 p1 = FastCanvas.createImage();
 p1.src = "p1.png";
-var prince1 = document.createElement('canvas');
+var prince1 = FastCanvas.create();
 prince1.width = (75 * ratio)|0;
 prince1.height = (100 * ratio)|0;
 var prince1tx = prince1.getContext('2d');
