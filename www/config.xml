@@ -61,7 +61,6 @@
     <icon src="res/icon/windows-phone/icon-173.png" gap:platform="winphone"   gap:role="background" />
 
     <gap:plugin name="com.adobe.plugins.fastcanvas" version="1.0.1" />
-    <plugin name="FastCanvas" value="com.adobe.plugins.FastCanvas"/>
 
     <!--
         Define access to external domains.
