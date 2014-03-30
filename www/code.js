@@ -187,9 +187,9 @@ function render() {
 
 	//drawing the prince
 	if(prince.mov) {
-		ctx.drawImage(prince1, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
+		ctx.drawImage(p1, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 ),  (75 * ratio)|0, (100 * ratio)|0 );
 	} else {
-		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
+		ctx.drawImage(p0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 ),  (75 * ratio)|0, (100 * ratio)|0 );
 	}
 
 	FastCanvas.render();
@@ -204,25 +204,9 @@ var ratio12 = (12*ratio)|0;
 
 p0 = FastCanvas.createImage();
 p0.src = "p0.png";
-var prince0 = FastCanvas.create();
-prince0.width = (75 * ratio)|0;
-prince0.height = (100 * ratio)|0;
-var prince0tx = prince0.getContext('2d');
-p0.onload = function() {
-	prince0tx.drawImage(p0, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
-	FastCanvas.render();
-};
 
 p1 = FastCanvas.createImage();
 p1.src = "p1.png";
-var prince1 = FastCanvas.create();
-prince1.width = (75 * ratio)|0;
-prince1.height = (100 * ratio)|0;
-var prince1tx = prince1.getContext('2d');
-p1.onload = function() {
-	prince1tx.drawImage(p1, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
-	FastCanvas.render();
-};
 
 ctx.fillStyle = "#fff";
 ctx.clearRect( 0, 0 , ratio400 , ratio600 );
