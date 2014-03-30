@@ -210,6 +210,7 @@ prince0.height = (100 * ratio)|0;
 var prince0tx = prince0.getContext('2d');
 p0.onload = function() {
 	prince0tx.drawImage(p0, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+	FastCanvas.render();
 };
 
 p1 = FastCanvas.createImage();
@@ -220,10 +221,12 @@ prince1.height = (100 * ratio)|0;
 var prince1tx = prince1.getContext('2d');
 p1.onload = function() {
 	prince1tx.drawImage(p1, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
+	FastCanvas.render();
 };
 
 ctx.fillStyle = "#fff";
 ctx.clearRect( 0, 0 , ratio400 , ratio600 );
+FastCanvas.render();
 
 last = Date.now();
 setInterval(main, 1);
