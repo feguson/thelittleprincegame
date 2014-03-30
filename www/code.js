@@ -21,7 +21,7 @@ if(localStorage["maxrecord"] > 0) {
 }
 
 //initializing the canvas
-var c = document.getElementById("main");
+var c = FastCanvas.create("main");
 var ctx = c.getContext("2d");
 
 
@@ -194,6 +194,8 @@ function render() {
 	} else {
 		ctx.drawImage(prince0, ((prince.posx-37)*ratio)|0 , ((prince.posy-prince.jump-100)*ratio)|0 );
 	}
+
+	FastCanvas.render();
 }
 
 //pre-loading variables
@@ -203,7 +205,7 @@ var ratio12 = (12*ratio)|0;
 
 //pre-rendering prince
 
-p0 = new Image();
+p0 = FastCanvas.createImage();
 p0.src = "p0.png";
 var prince0 = document.createElement('canvas');
 prince0.width = (75 * ratio)|0;
@@ -213,7 +215,7 @@ p0.onload = function() {
 	prince0tx.drawImage(p0, 0, 0, (75 * ratio)|0, (100 * ratio)|0 );
 };
 
-p1 = new Image();
+p1 = FastCanvas.createImage();
 p1.src = "p1.png";
 var prince1 = document.createElement('canvas');
 prince1.width = (75 * ratio)|0;
