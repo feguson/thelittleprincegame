@@ -15,7 +15,6 @@ var timesplayed = 0;
 //is this a new record?
 if(localStorage["maxrecord"] > 0) {
 	record = localStorage["maxrecord"];
-	document.getElementById("record").innerHTML = record;
 } else {
 	localStorage["maxrecord"] = 0;
 }
@@ -152,10 +151,8 @@ function update() {
 				if (level > record) {
 					record = level;
 					localStorage["maxrecord"] = record;
-					document.getElementById("record").innerHTML = record;
 				}
 
-				document.getElementById('score').innerHTML = level;
 				prince.mov = 0; //stoping the prince move
 				prince.acc = 0;
 				prince.fall = 0;
