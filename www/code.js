@@ -20,7 +20,7 @@ if(localStorage["maxrecord"] > 0) {
 }
 
 //initializing the canvas
-var c = FastCanvas.create("main");
+var c = FastCanvas.create();
 var ctx = c.getContext("2d");
 
 
